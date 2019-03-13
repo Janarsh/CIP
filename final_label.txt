@@ -1,0 +1,10 @@
+balloon
+beachsides
+birthdaycap
+cake
+candle
+fooditems
+giftbox
+hillstation
+party
+selfie

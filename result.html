@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<!-- <head> 
+    <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("client.html"); 
+    });
+    </script> 
+  	</head>  -->
+   	<body>   
+      <table border = 1>
+         {% for i in result %}
+            <tr>
+               <td> {{ i }} </td>
+            </tr>
+         {% endfor %}
+      </table>
+      <div data-include="client.html"></div>
+   	</body>
+</html>

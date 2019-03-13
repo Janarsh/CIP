@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+
+		a {
+			margin-left: 0px; 
+		}
+
+		#hashlist {
+			width : 100%;
+			height: 100px;
+			line-height: 30px;
+		}
+		div.sam1 {
+		  width: 10%;
+		  background: #ADAEB6;
+		  padding: 0px 0;
+		  text-align: center;
+		  margin-top: 2px;
+		}
+		div.sam2 {
+		  width: 10%;
+		  background: #ADAEB6;
+		  padding: 0px 0;
+		  text-align: center;
+		  margin-top: 1px;
+		}
+		div.sam3 {
+		  width: 10%;
+		  background: #ADAEB6;
+		  padding: 0px 0;
+		  text-align: center;
+		  margin-top: 1px;
+		}
+		div.sam4 {
+		  width: 10%;
+		  background: #ADAEB6;
+		  padding: 0px 0;
+		  text-align: center;
+		  margin-top: 1px;
+		}
+		div.sam5 {
+		  width: 10%;
+		  background: #ADAEB6;
+		  padding: 0px 0;
+		  text-align: center;
+		  margin-top: 1px;
+		}
+	</style>
+</head>
+<body>
+ <textarea id="hashlist"></textarea>
+ {% for i in result1 %}
+ {%set x=loop.index %}
+ <a href="#" onclick="myFunction({{x}})">{{result[x-1]}}</a><br>
+ {% for j in i %}
+ {% set k="sam"+x|string %}
+       <div id="1" class="{{k}}"> 
+       <a href="#" onclick="addhash(this)">{{ j }}</a> 
+   	   </div>
+ {% endfor %}
+ {% endfor %}
+<script>
+	var i1=document.getElementsByClassName("sam1");
+	for (i = 0; i < i1.length; i++) 
+	{ 
+	    i1[i].style.display = "none";
+	}
+	var i2=document.getElementsByClassName("sam2");
+	for (i = 0; i < i2.length; i++) 
+	{ 
+	    i2[i].style.display = "none";
+	}
+	var i3=document.getElementsByClassName("sam3");
+	for (i = 0; i < i3.length; i++) 
+	{ 
+	    i3[i].style.display = "none";
+	}
+	var i4=document.getElementsByClassName("sam4");
+	for (i = 0; i < i4.length; i++) 
+	{ 
+	    i4[i].style.display = "none";
+	}
+	var i5=document.getElementsByClassName("sam5");
+	for (i = 0; i < i5.length; i++) 
+	{ 
+	    i5[i].style.display = "none";
+	}
+function myFunction(el) {
+
+  var x = document.getElementsByClassName("sam"+el.toString());
+  var i;
+	for (i = 0; i < x.length; i++) 
+	{ 
+	  if (x[i].style.display === "none") 
+	  {
+	    x[i].style.display = "block";
+	  } 
+	  else 
+	  {
+	    x[i].style.display = "none";
+	  }
+	}
+}
+
+function addhash(s)
+{
+	var text=s.textContent;
+	var textarea = document.getElementById('hashlist');
+	textarea.value = textarea.value+"#"+text+" ";
+}
+</script>
+   </body>
+</html>
